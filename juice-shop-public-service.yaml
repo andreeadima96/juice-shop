@@ -7,7 +7,6 @@ metadata:
     namespace: default
     selfLink: /api/v1/namespaces/default/services/juice-shop-public-service
 spec:
-    clusterIP: 100.66.141.106
     externalTrafficPolicy: Cluster
     ports:
     - port: 80
