@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: juice-shop
+  labels: 
+    app: juice-shop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: juice-shop
+  template:
+    metadata:
+      name: juice-shop
+      labels:
+        app: juice-shop
+    spec:
+      imagePullSecrets:
+      - name: myregistrykey
+      containers:
+       - image: adima96/juice-shop
+         name: juice-shop
+         ports:
+         - containerPort: 80
